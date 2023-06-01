@@ -9,17 +9,21 @@
 <body>
   <div class="container">
     <h2>Add Details</h2>
-    <form action="submit.php" method="POST">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-      </div>
-      <input type="submit" value="Submit">
+    <form method="POST" action="submit.php" onsubmit="showConfirmation(); return false;">
+      <label for="name">Name:</label>
+      <input type="text" name="name" placeholder="Enter Your Name" id="name" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" name="phone" placeholder="Enter Your Phone Number" id="phone" required>
+
+      <button type="submit">Submit</button>
     </form>
+
+    <div id="confirmation" style="display: none;">
+      Data stored successfully!
+    </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
